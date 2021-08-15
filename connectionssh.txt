@@ -1,0 +1,7 @@
+#chemin vers le dossier du script
+cd /home/admin/web/webuzz.tech/public_html/TV_detection/
+
+#comment se connecter en SSH :
+
+ssh root@webuzz.tech
+q5uzcxdJTVMg
