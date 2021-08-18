@@ -5,3 +5,8 @@ cd /home/admin/web/webuzz.tech/public_html/TV_detection/
 
 ssh root@webuzz.tech
 q5uzcxdJTVMg
+#### serveur 2 
+ssh ubuntu@webuzzdz.com
+adelMOULOUA
+/home/admin/TV-RECO/TV-Advertisements-Detection/
+screen -r

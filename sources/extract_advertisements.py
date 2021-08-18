@@ -2,23 +2,23 @@ import cv2
 import os
 import time
 from tqdm import tqdm
-
-def extract_frames(path):
-    name = os.path.basename(path)
-    cap = cv2.VideoCapture(path)
-    i = 0
-    while cap.isOpened():  # While the video in opened
-        ret, frame = cap.read()
-        if ret == False:
-            break
-        cv2.imwrite('../Frames/' + str(name) + str(i) + '.jpg', frame)
-        i += 1
-        cv2.imshow("as", frame)
-        ch = 0xFF & cv2.waitKey(1)  # Wait for a second
-        if ch == 27:
-            break
-    cap.release()
-    cv2.destroyAllWindows()
+#
+# def extract_frames(path):
+#     name = os.path.basename(path)
+#     cap = cv2.VideoCapture(path)
+#     i = 0
+#     while cap.isOpened():  # While the video in opened
+#         ret, frame = cap.read()
+#         if ret == False:
+#             break
+#         cv2.imwrite('../Frames/' + str(name) + str(i) + '.jpg', frame)
+#         i += 1
+#         cv2.imshow("as", frame)
+#         ch = 0xFF & cv2.waitKey(1)  # Wait for a second
+#         if ch == 27:
+#             break
+#     cap.release()
+#     cv2.destroyAllWindows()
 
 
 # extract_frames("../Videos/ENTV_1.ts")
@@ -88,6 +88,8 @@ while True:
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
             if Found_s < -0.80:
-                print("End recording number {}".format(nbr))
+                print(" End recording number {}".format(nbr))
                 nbr = nbr + 1
                 break
+cap.release()
+cv2.destroyAllWindows()
