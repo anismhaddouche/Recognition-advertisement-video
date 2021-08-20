@@ -68,9 +68,9 @@ def time_ads(path, descriptor):
     cv2.destroyAllWindows()
 
 
-time_ads("../Videos/ENTV_2_scaled.mp4", "../Frames_channels/test.jpg")
-# if __name__ == '__main__':
+# time_ads("../Videos/ENTV_2_scaled.mp4", "../Frames_channels/test.jpg")
+if __name__ == '__main__':
     # Map command line arguments to function arguments.
-    # time_ads(*sys.argv[1:])
+    time_ads(*sys.argv[1:])
 
 # python3 time_advertisements.py ../Videos/ENTV_1_scaled.mp4 ../Frames_channels/ENTV_1.jpg
