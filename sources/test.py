@@ -1,12 +1,11 @@
-import sys
-
-
-def do_something(x, y, z='ZAZAZAZA'):
-    print('x:', x)
-    print('y:', y)
-    print('z:', z)
-
-
-if __name__ == '__main__':
-    # Map command line arguments to function arguments.
-    do_something(*sys.argv[1:])
+import cv2
+frame= cv2.imread("/Users/macbookpro/PycharmProjects/TV-Advertisements-Detection/Frames_channels/ENTV.jpg")
+(B, G, R) = cv2.split(frame)
+# cv2.imshow("Red", R)
+# cv2.imshow("Green", G)
+# cv2.imshow("Blue", B)
+# cv2.waitKey(0)
+merged = cv2.merge([B, G, R])
+cv2.imshow("Merged", merged)
+cv2.waitKey(0)
+cv2.destroyAllWindows()

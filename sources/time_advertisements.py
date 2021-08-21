@@ -5,6 +5,7 @@ import ntpath
 from tqdm import tqdm
 import csv
 import sys
+from tools import resize_frame
 
 
 def found_match(descriptor_channel_frame, descriptor_current_frame, bf=cv2.BFMatcher(cv2.NORM_HAMMING), thresh=0.80,
@@ -16,14 +17,14 @@ def found_match(descriptor_channel_frame, descriptor_current_frame, bf=cv2.BFMat
         if m.distance < 0.80 * n.distance:
             good.append([m])
     threshold = len(good) / len(descriptor_channel_frame)
-    print(threshold)
+    # print(threshold)
     if threshold > thresh:
         # print("similar")
         Found = True
     return Found, threshold
 
 
-def csv_write(fields=['first', 'second', 'third', 'forth', 'fifth'], file="../time_ads.csv"):
+def csv_write(fields=['first', 'second', 'third', 'forth', 'fifth',"sixth"], file="../time_ads.csv"):
     try:
         with open(file, 'a', newline='') as f:
             writer = csv.writer(f)
@@ -46,19 +47,21 @@ def time_ads(path, descriptor):
         pbar.update(i)
         ret, current_frame = cap.read()
         if ret:
+            # print(cap.get(cv2.CAP_PROP_FORMAT))
             # print(str(timedelta(seconds=cap.get(cv2.CAP_PROP_POS_MSEC)/1000)), cap.get(cv2.CAP_PROP_POS_FRAMES))
             current_frame = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
             _, descriptor_current_frame = orb.detectAndCompute(current_frame, None)
-            # cv2.imshow('frame', current_frame)
-            # if cv2.waitKey(int(cap.get(cv2.CAP_PROP_FPS))) & 0xFF == ord('q'):
-            #     break
+            current_frame = cv2.resize(current_frame,(320,180))
+            cv2.imshow('frame', current_frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
             _, ts = found_match(descriptor_channel_frame, descriptor_current_frame)
             treshold_start.append(ts)
             Found_s = treshold_start[-1] - treshold_start[-2]
             # print(Found_s)
             if Found_s < -0.35:
                 field = [str(datetime.now()), str(timedelta(seconds=cap.get(cv2.CAP_PROP_POS_MSEC) / 1000)),
-                         str(cap.get(cv2.CAP_PROP_POS_FRAMES)), str(ntpath.basename(path))]
+                         str(cap.get(cv2.CAP_PROP_POS_FRAMES)), str(ntpath.basename(path)),str(Found_s)]
                 print(field)
                 csv_write(field)
         else:
