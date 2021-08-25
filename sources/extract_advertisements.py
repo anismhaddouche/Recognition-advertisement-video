@@ -121,7 +121,7 @@ def extract_ads(path_video, path_channel_frame):
             break
 
 
-# Usage : extract_ads("../Videos/test_resized.ts", "../Frames_channels/ENTER.jpg")
-
 if __name__ == '__main__':
     extract_ads(*sys.argv[1:])
+
+# Usage : extract_ads("../Videos/test_resized.ts", "../Frames_channels/ENTER.jpg")

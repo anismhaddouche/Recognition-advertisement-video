@@ -78,7 +78,6 @@ def time_ads(path, descriptor):
 
 
 if __name__ == '__main__':
-    # Map command line arguments to function arguments.
     time_ads(*sys.argv[1:])
 
-# python3 time_advertisements.py ../Videos/test_resized.ts ../Frames_channels/ENTV.jpg
+# usage : python3 time_advertisements.py ../Videos/test_resized.ts ../Frames_channels/ENTV.jpg
