@@ -1,11 +1,19 @@
 import cv2
-frame= cv2.imread("/Users/macbookpro/PycharmProjects/TV-Advertisements-Detection/Frames_channels/ENTV.jpg")
-(B, G, R) = cv2.split(frame)
-# cv2.imshow("Red", R)
-# cv2.imshow("Green", G)
-# cv2.imshow("Blue", B)
-# cv2.waitKey(0)
-merged = cv2.merge([B, G, R])
-cv2.imshow("Merged", merged)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+path = "http://aptv.one:80/live/899606913121352/1593574628/50508.ts "
+cap = cv2.VideoCapture(path)
+while True :
+    ret, current_frame = cap.read()
+    while current_frame is None:
+        try:
+            print("triying to get a frame")
+            current_frame = cap.read(path)
+        except:
+            pass
+    if ret:
+        """ Do something"""
+        cv2.imshow('frame', current_frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    else:
+        print("Finish reading ")
+        break

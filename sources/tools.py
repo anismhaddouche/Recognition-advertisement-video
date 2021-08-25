@@ -1,6 +1,7 @@
 import os
 import cv2
-
+import subprocess
+import requests
 
 def convert_video(actual_path, new_path, w=320, h=180):
     """Convert to h265, scale and black and white  """
@@ -36,3 +37,22 @@ def extract_frames(path):
             break
     cap.release()
     cv2.destroyAllWindows()
+#
+# def ssh_connection():
+#     token = requests.get("curl 'https://token.kube.easybroadcast.fr/authtoken?url=http://apphta.easybroadcast.fr/apphta' \
+#   -H 'Connection: keep-alive' \
+#   -H 'Pragma: no-cache' \
+#   -H 'Cache-Control: no-cache' \
+#   -H 'sec-ch-ua: "Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"' \
+#   -H 'sec-ch-ua-mobile: ?0' \
+#   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36' \
+#   -H 'Accept: /' \
+#   -H 'Origin: https://www.htatv.com/' \
+#   -H 'Sec-Fetch-Site: cross-site' \
+#   -H 'Sec-Fetch-Mode: cors' \
+#   -H 'Sec-Fetch-Dest: empty' \
+#   -H 'Referer: https://www.htatv.com/' \
+#   -H 'Accept-Language: fr' \
+#   --compressed")
+#     print(token)
+# ssh_connection()
