@@ -1,5 +1,6 @@
 import cv2
-path = "http://aptv.one:80/live/899606913121352/1593574628/50508.ts "
+'path = "http://aptv.one:80/live/899606913121352/1593574628/50508.ts "'
+path= '/home/anis/PycharmProjects/TV-Advertisements-Detection/Recordings/output_1_0:02:07.400000_2021-08-25 14:06:02.391885.mp4'
 cap = cv2.VideoCapture(path)
 while True :
     ret, current_frame = cap.read()
