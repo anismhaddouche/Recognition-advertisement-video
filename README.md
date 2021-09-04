@@ -8,3 +8,5 @@ usage: python3 exctract_advertisements.py ../Videos/test_resized.ts ../Frames_ch
 usage: python3 time_advertisements.py ../Videos/test_resized.ts ../Frames_channels/ENTV.jpg
 
 Please see the documations of each script for more details.
+
+### Mise a jout de la raspberry
