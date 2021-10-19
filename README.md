@@ -9,4 +9,3 @@ usage: python3 time_advertisements.py ../Videos/test_resized.ts ../Frames_channe
 
 Please see the documations of each script for more details.
 
-### Mise a jout de la raspberry
