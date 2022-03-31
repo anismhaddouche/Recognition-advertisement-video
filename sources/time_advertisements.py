@@ -26,7 +26,11 @@ def found_match(descriptor_channel_frame, descriptor_current_frame, bf=cv2.BFMat
 
 def csv_write(fields=None, file="../time_ads.csv"):
     """Write in the parameters [Date and current time,video time,frame position,video name, score
+<<<<<<< HEAD
         ] when the Jingle appears in a video"""
+=======
+        ] when the Jingle appears a video"""
+>>>>>>> 2c2709ebc7fc449f783160abe56d5b1c8f46baf5
     if fields is None:
         fields = ["Date and current time", "video time", "frame position", "video name", "score"]
     try:
@@ -35,7 +39,11 @@ def csv_write(fields=None, file="../time_ads.csv"):
             writer.writerow(fields)
             f.close()
     except NameError:
+<<<<<<< HEAD
         print("Can't open the CSV file")
+=======
+        print("Can't open the CV file")
+>>>>>>> 2c2709ebc7fc449f783160abe56d5b1c8f46baf5
 
 
 def time_ads(path, descriptor):

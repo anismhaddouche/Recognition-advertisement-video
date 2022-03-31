@@ -37,6 +37,7 @@ def extract_frames(path):
             break
     cap.release()
     cv2.destroyAllWindows()
+<<<<<<< HEAD
     
 
 def record_live_stream(link, name):
@@ -54,6 +55,8 @@ resize_frame("/Users/anis/PycharmProjects/TV-Advertisements-Detection/Frames_cha
 
 
 
+=======
+>>>>>>> 2c2709ebc7fc449f783160abe56d5b1c8f46baf5
 #
 # def ssh_connection():
 #     token = requests.get("curl 'https://token.kube.easybroadcast.fr/authtoken?url=http://apphta.easybroadcast.fr/apphta' \
