@@ -6,9 +6,7 @@ from datetime import datetime
 from datetime import timedelta
 
 
-def found_match(descriptor_channel_frame, descriptor_current_frame, bf=cv2.BFMatcher(cv2.NORM_HAMMING), thresh=0.80,
-                ):
-    found = False
+def found_match(descriptor_channel_frame, descriptor_current_frame, bf=cv2.BFMatcher(cv2.NORM_HAMMING), thresh=0.80,found=False):
     threshold = 0
     try:
         matches = bf.knnMatch(descriptor_channel_frame, descriptor_current_frame, k=2)
@@ -146,13 +144,9 @@ def extract_ads_stream(path_video, path_channel_frame,show_video = True, confide
 
 
             # break
-if __name__ == '__main__':
-    extract_ads_stream(*sys.argv[1:])
-
-
-                
-
+# if __name__ == '__main__':
+#     extract_ads_stream(*sys.argv[1:])
 # # Usage 
 # ENTV : http://aptv.one:8000/live/899606913121352/1593574628/191.ts
-# extract_ads("/Users/anis/PycharmProjects/TV-Advertisements-Detection/Videos/test_resized.ts",
-            # "/Users/anis/PycharmProjects/TV-Advertisements-Detection/Frames_channels/ENTV.jpg", show_video=False)
+extract_ads_stream("http://aptv.one:8000/live/899606913121352/1593574628/191.ts",
+                   "Frames_channels/ENTV_MARS_22_resized.png", show_video=True)
