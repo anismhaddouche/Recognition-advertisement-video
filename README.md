@@ -1,4 +1,3 @@
-# TV-Advertisements-Detection
 
 The aim of this project is to detect the beginning and the end of a commercial break in a given TV Channel. Our approach consists in searching the `Jingle`, of the channel, in a video stream. To this end we use the `ORB` (Oriented FAST and Rotated BRIEF) algorithm, included in `OpenCv`, in order to check how a video stream frame match with the `Jingle`. The project contains two scripts which are explained in the following.
 
